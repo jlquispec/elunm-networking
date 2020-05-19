@@ -1,0 +1,31 @@
+#N canvas -8 -8 1858 1037 12;
+#X msg 83 210 listen 0;
+#X msg 175 215 listen 13000;
+#X obj 175 256 netreceive -u;
+#X obj 60 97 tgl 25 0 empty empty empty 17 7 0 10 -262144 -1 -1 1 1
+;
+#X obj 60 144 sel 1 0;
+#X obj 175 293 outlet;
+#X floatatom 119 103 6 0 0 2 Port - -;
+#X msg 175 174 set listen \$1;
+#X obj 222 44 savestate;
+#X obj 222 75 f;
+#X obj 282 138 f;
+#X text 56 75 Listen;
+#X obj 143 64 bng 20 100 50 0 empty empty empty 17 7 0 10 -261682 -1
+-1;
+#X connect 0 0 2 0;
+#X connect 1 0 2 0;
+#X connect 2 0 5 0;
+#X connect 2 0 12 0;
+#X connect 3 0 4 0;
+#X connect 4 0 1 0;
+#X connect 4 1 0 0;
+#X connect 6 0 7 0;
+#X connect 6 0 10 1;
+#X connect 7 0 1 0;
+#X connect 8 0 9 0;
+#X connect 8 1 10 0;
+#X connect 9 0 6 0;
+#X connect 10 0 8 0;
+#X coords 0 -1 1 1 120 80 1 50 50;

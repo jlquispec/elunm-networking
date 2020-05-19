@@ -1,0 +1,17 @@
+#N canvas 335 478 1920 1037 10;
+#X msg 195 41 0;
+#X msg 195 62 1;
+#X obj 104 12 inlet;
+#X obj 104 194 outlet;
+#X obj 104 74 spigot 1;
+#X obj 131 131 delay \$1;
+#X obj 104 105 t a b;
+#X obj 270 109 pipe;
+#X connect 0 0 4 1;
+#X connect 1 0 4 1;
+#X connect 2 0 4 0;
+#X connect 4 0 6 0;
+#X connect 5 0 1 0;
+#X connect 6 0 3 0;
+#X connect 6 1 0 0;
+#X connect 6 1 5 0;

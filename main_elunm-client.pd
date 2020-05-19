@@ -1,11 +1,11 @@
 #N canvas -8 -8 1858 1037 12;
 #X declare -path ./lib;
-#X obj 216 379 netoutput;
+#X obj 165 379 netoutput;
 #A saved 127 0 0 1 13000 jorge;
 #N canvas 571 303 450 300 declare 0;
 #X obj 46 16 declare -path ./lib;
 #X restore 34 21 pd declare;
-#X obj 216 339 r \$0-messages;
+#X obj 165 339 r \$0-messages;
 #N canvas -8 -8 1858 1037 glosario 0;
 #X text 469 436 Pausar reproducción;
 #X msg 74 46 sampleselector-0.openfolder 0 samples3;

@@ -26,7 +26,7 @@ Se necesitarán las siguientes librerías externas, las cuales deberán ser inst
 
 Para uso local (en la misma computadora):
 
-- Se recomienda usar dos instancias de Pure Data para la ejecución del patch servidor y patch cliente: **main_elunm-server.pd** y **main_elunm-cliente.pd**.
+- Se recomienda abrir dos instancias de Pure Data para la ejecución del patch servidor y patch cliente: **main_elunm-server.pd** y **main_elunm-cliente.pd**.
 - En el patch servidor configurar el puerto a través el cual se recepcionarán los mensajes (por ejemplo: 13000) y activar la escucha de mensajes usando el **toggle Listen**.
 - En el patch cliente configurar el puerto a través el cual en enviarán los mensajes (debe ser el mismo colocado en el patch servidor).
 - Configurar la dirección de IP de destino (servidor) en 127.0.0.1 (localhost), el usuario a través el cual se realizará el envío de mensajes y activar el envío de mensajes usando el **toggle Connect**, esperar para asegurar que la conexión se realizó satisfactoriamente

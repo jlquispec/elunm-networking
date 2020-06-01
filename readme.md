@@ -39,7 +39,7 @@ Para uso a través de LAN (red local) e Internet:
     - Configurar el puerto a través el cual se recepcionarán los mensajes; por ejemplo: 13000.
     - Debe proporsionar a los usuarios cliente su dirección IP, en caso se a través de una red local (LAN) obtenerlo dentro de las configuraciones de red de la computadora que se usa.
 
-    ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/681afd2b-8562-417e-bcd0-4d0f31faf9ea/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/681afd2b-8562-417e-bcd0-4d0f31faf9ea/Untitled.png)
+		Para Windows: Usar el comando ipconfig  a través del Símbolo del Sistema.
 
     Para Windows: Usar el comando ***ipconfig***  a través del Símbolo del Sistema.
 

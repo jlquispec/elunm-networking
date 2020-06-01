@@ -39,12 +39,10 @@ Para uso a través de LAN (red local) e Internet:
     - Configurar el puerto a través el cual se recepcionarán los mensajes; por ejemplo: 13000.
     - Debe proporsionar a los usuarios cliente su dirección IP, en caso se a través de una red local (LAN) obtenerlo dentro de las configuraciones de red de la computadora que se usa.
 
-		Para Windows: Usar el comando ipconfig  a través del Símbolo del Sistema.
-
-    Para Windows: Usar el comando ***ipconfig***  a través del Símbolo del Sistema.
+		Para Windows: Usar el comando ***ipconfig***  a través del Símbolo del Sistema.
 
     - En caso los usuarios se conecten por internet, obtener la dirección ip pública a través de  [https://www.monip.org/](https://www.monip.org/) o páginas similares. Considerar que previamente el usuario servidor debe haber preparado la configuración de su router para el redireccionamiento de mensajes (Port Forwarding) a su dirección IP privada para el puerto determinado (el mismo que se configura en los patches).
-    - Activar la escucha de mensajes usando el **toggle Listen**.
+- Activar la escucha de mensajes usando el **toggle Listen**.
 - Cliente:
     - Abrir el patch cliente: **main_elunm-cliente.pd**.
     - Configurar la dirección de IP de destino (proporcionado por el usuario que opera el patch servidor), el usuario a través el cual se realizará el envío de mensajes y activar el envío de mensajes usando el **toggle Connect**, esperar para asegurar que la conexión se realizó satisfactoriamente.

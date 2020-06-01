@@ -1,8 +1,8 @@
 #N canvas -8 -8 1920 1037 12;
 #X obj 524 741 netsend -u;
 #X msg 547 640 disconnect;
-#X obj 162 139 tgl 25 0 empty empty empty 17 7 0 10 -228856 -1 -1 1
-1;
+#X obj 162 139 tgl 25 0 empty empty Connect -5 35 0 10 -228856 -1 -1
+0 1;
 #X floatatom 396 142 6 0 0 2 Port: - -;
 #X obj 35 498 inlet;
 #X floatatom 206 141 5 0 0 2 Dirección_IP - -;

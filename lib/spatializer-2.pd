@@ -1,17 +1,17 @@
 #N canvas -8 -8 1858 1037 12;
-#X obj 239 128 hsl 160 15 -1 1 0 0 c-spatializer-panning-\$1 c-spatializer-panning-\$1
-panning_(-1:1) 0 7 0 9 -204800 -128992 -33289 15900 1;
-#X obj 311 143 bng 15 250 50 0 empty empty c 5 7 0 8 -262144 -1 -1
+#X obj 239 130 hsl 160 15 -1 1 0 0 c-spatializer-panning-\$1 c-spatializer-panning-\$1
+panning_(-1:1) 0 7 0 9 -204800 -128992 -33289 7950 1;
+#X obj 311 145 bng 15 250 50 0 empty empty c 5 7 0 8 -262144 -1 -1
 ;
-#X msg 311 186 0;
-#X obj 236 143 bng 15 250 50 0 empty empty -1 4 8 0 8 -262144 -1 -1
+#X msg 311 188 0;
+#X obj 236 145 bng 15 250 50 0 empty empty -1 4 8 0 8 -262144 -1 -1
 ;
-#X obj 386 143 bng 15 250 50 0 empty empty 1 5 8 0 8 -262144 -1 -1
+#X obj 386 145 bng 15 250 50 0 empty empty 1 5 8 0 8 -262144 -1 -1
 ;
-#X msg 236 186 -1;
-#X msg 386 186 1;
-#X floatatom 405 128 5 -1 1 0 - c-spatializer-panning-#1 -;
-#X obj 417 173 tgl 15 0 spatializer-\$1.pan.randomizer spatializer-\$1.pan.randomizer
+#X msg 236 188 -1;
+#X msg 386 188 1;
+#X floatatom 405 130 5 -1 1 0 - c-spatializer-panning-#1 -;
+#X obj 417 175 tgl 15 0 spatializer-\$1.pan.randomizer spatializer-\$1.pan.randomizer
 rand. 18 8 0 10 -262144 -1 -1 0 1;
 #X obj 236 227 t f b;
 #X obj 236 285 pack f f;
@@ -124,6 +124,8 @@ ramp_time_(0:5000)_msec 0 8 0 9 -228856 -128992 -33289 9540 1;
 #X connect 12 0 11 0;
 #X connect 13 0 3 0;
 #X restore 83 601 pd draft;
+#X obj 409 110 bng 15 250 50 0 spatializer-\$1.reset spatializer-\$1.reset
+reset 18 7 0 10 -261234 -1 -1;
 #X connect 1 0 2 0;
 #X connect 2 0 9 0;
 #X connect 3 0 5 0;

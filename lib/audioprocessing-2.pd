@@ -1,44 +1,44 @@
 #N canvas -8 -8 1858 1037 12;
 #X msg 627 321 wet \$1;
 #X obj 900 325 else/rm~;
-#X obj 120 128 hsl 180 15 -24 24 0 0 c-audioprocessing-pitchshifter_transp-\$1
+#X obj 120 132 hsl 180 15 -24 24 0 0 c-audioprocessing-pitchshifter_transp-\$1
 c-audioprocessing-pitchshifter_transp-\$1 pitchshifter_(-24:24) 0 8
-0 8 -232576 -128992 -33289 8950 1;
-#X obj 305 128 bng 15 250 50 0 audioprocessing-\$1.pitchshifter.reset
+0 8 -232576 -128992 -33289 24000 1;
+#X obj 305 132 bng 15 250 50 0 audioprocessing-\$1.pitchshifter.reset
 audioprocessing-\$1.pitchshifter.reset R 4 8 0 10 -262144 -1 -1;
 #X obj 120 225 hsl 180 15 0 1 0 0 c-audioprocessing-reverb_wet-\$1
 c-audioprocessing-reverb_wet-\$1 reverb_dry/wet_(0:1) 0 8 0 8 -228856
--128992 -33289 0 1;
+-128992 -33289 11600 1;
 #X obj 120 243 hsl 180 15 0 1 0 0 c-audioprocessing-reverb_roomsize-\$1
 c-audioprocessing-reverb_roomsize-\$1 reverb_roomsize_(0:1) 0 8 0 8
--228856 -128992 -33289 8950 1;
-#X obj 120 180 hsl 180 15 0 1500 0 0 c-audioprocessing-delay_delaytime-\$1
+-228856 -128992 -33289 27200 1;
+#X obj 120 181 hsl 180 15 0 1500 0 0 c-audioprocessing-delay_delaytime-\$1
 c-audioprocessing-delay_delaytime-\$1 delay_time_(0:1500)ms 0 8 0 8
--4032 -128992 -33289 2387 1;
-#X obj 120 198 hsl 180 15 0 10000 0 0 c-audioprocessing-delay_feedbacktime-\$1
+-4032 -128992 -33289 19800 1;
+#X obj 120 199 hsl 180 15 0 10000 0 0 c-audioprocessing-delay_feedbacktime-\$1
 c-audioprocessing-delay_feedbacktime-\$1 delay_feedback_(0:10000)ms
-0 8 0 8 -4032 -128992 -33289 0 1;
+0 8 0 8 -4032 -128992 -33289 22800 1;
 #X obj 305 225 bng 15 250 50 0 audioprocessing-\$1.reverb.reset audioprocessing-\$1.reverb.reset
 R 4 8 0 10 -262144 -1 -1;
-#X obj 305 180 bng 15 250 50 0 audioprocessing-\$1.delay.reset audioprocessing-\$1.delay.reset
+#X obj 305 181 bng 15 250 50 0 audioprocessing-\$1.delay.reset audioprocessing-\$1.delay.reset
 R 4 8 0 10 -262144 -1 -1;
-#X obj 120 154 hsl 180 15 0 4000 0 0 c-audioprocessing-ringmodulator_freq-\$1
+#X obj 120 156 hsl 180 15 0 4000 0 0 c-audioprocessing-ringmodulator_freq-\$1
 c-audioprocessing-ringmodulator_freq-\$1 ringmodulator_freq_(0:4000)Hz
-0 8 0 8 -261234 -128992 -33289 0 1;
-#X obj 305 154 bng 15 250 50 0 audioprocessing-\$1.ringmodulator.reset
+0 8 0 8 -261234 -128992 -33289 25600 1;
+#X obj 305 156 bng 15 250 50 0 audioprocessing-\$1.ringmodulator.reset
 audioprocessing-\$1.ringmodulator.reset R 4 8 0 10 -262144 -1 -1;
 #X obj 120 261 hsl 180 15 0.02 2 1 0 c-audioprocessing-reverb_damping-\$1
 c-audioprocessing-reverb_damping-\$1 reverb_damping_(0:2) 0 8 0 8 -228856
--128992 -33289 0 1;
-#X obj 53 362 loadbang;
-#X obj 53 394 \$1;
+-128992 -33289 10800 1;
+#X obj 44 418 loadbang;
+#X obj 44 450 \$1;
 #X obj 959 215 * 100;
 #X text 799 46 PROCESAMIENTO;
 #X obj 902 124 catch~ s-audioprocessing-in0-\$1;
-#X obj 1000 703 freeverb~;
+#X obj 1023 665 freeverb~;
 #X msg 474 420 roomsize \$1;
 #X msg 444 515 damping \$1;
-#N canvas -8 -8 1858 1037 methods 1;
+#N canvas -8 -8 1858 1037 methods 0;
 #X obj 44 472 pack f f f, f 11;
 #X msg 44 497 \$3 \, \$1 \$2;
 #X obj 44 349 unpack f f;
@@ -254,10 +254,10 @@ c-audioprocessing-reverb_damping-\$1 reverb_damping_(0:2) 0 8 0 8 -228856
 #X obj 974 145 f;
 #X msg 1050 82 0;
 #X obj 942 88 t f b b;
-#X obj 942 257 change -1;
+#X obj 942 260 change -1;
 #X obj 999 108 * 1;
-#X obj 942 236 line 1 30;
-#X obj 942 323 s c-audioprocessing-wet-\$1;
+#X obj 942 239 line 1 30;
+#X obj 942 326 s c-audioprocessing-wet-\$1;
 #X obj 1007 161 v c-audioprocessing-wet-\$1;
 #X obj 942 15 r audioprocessing-\$1.wet.ramp;
 #X obj 1260 56 t a b;
@@ -271,7 +271,7 @@ c-audioprocessing-reverb_damping-\$1 reverb_damping_(0:2) 0 8 0 8 -228856
 #X obj 1260 30 r audioprocessing-\$1.wet.rampfromto;
 #X obj 396 139 s audioprocessing-\$1.wet.ramp;
 #X msg 396 102 1 0;
-#X obj 942 290 clip 0 1;
+#X obj 942 293 clip 0 1;
 #X msg 258 1883 0;
 #X msg 1350 1934 0 200;
 #X msg 1413 1225 0 200;
@@ -566,15 +566,15 @@ c-audioprocessing-reverb_damping-\$1 reverb_damping_(0:2) 0 8 0 8 -228856
 #X connect 230 0 58 0;
 #X connect 231 0 125 0;
 #X connect 232 0 124 0;
-#X restore 69 549 pd methods;
+#X restore 62 609 pd methods;
 #X msg 514 338 dry \$1;
 #X obj 1276 124 catch~ s-audioprocessing-in1-\$1;
 #X obj 1276 325 else/rm~;
 #X obj 1335 215 * 100;
-#X obj 815 953 throw~ s-audioprocessing-out0;
-#X obj 1293 1008 throw~ s-audioprocessing-out1;
-#X obj 781 901 s~ s-audioprocessing-out0-\$1;
-#X obj 1378 930 s~ s-audioprocessing-out1-\$1;
+#X obj 775 925 throw~ s-audioprocessing-out0;
+#X obj 1239 923 throw~ s-audioprocessing-out1;
+#X obj 741 873 s~ s-audioprocessing-out0-\$1;
+#X obj 1324 845 s~ s-audioprocessing-out1-\$1;
 #X obj 1335 180 r c-audioprocessing-pitchshifter_transp-\$1;
 #X obj 959 180 r c-audioprocessing-pitchshifter_transp-\$1;
 #X obj 953 294 r c-audioprocessing-ringmodulator_freq-\$1;
@@ -618,48 +618,36 @@ change_time_(0:20000)_sec 0 8 0 8 -228856 -128992 -33289 0 1;
 #X connect 2 0 6 0;
 #X connect 4 0 5 0;
 #X connect 6 0 5 0;
-#X restore 68 506 pd draft;
-#X obj 160 698 vsl 15 100 -1 1 0 1 empty empty empty -9 0 0 4 -262144
--1 -1 7425 0;
-#X msg 162 629 0.5;
-#X msg 203 651 1;
-#X msg 119 650 0;
-#X msg 244 671 0.3;
+#X restore 59 562 pd draft;
 #X obj 120 290 hsl 180 15 0 1 0 0 c-audioprocessing-wet-\$1 c-audioprocessing-wet-\$1
-dry/wet_(0:1) 0 8 0 8 -204800 -128992 -33289 17900 1;
-#X msg 53 429 \; audioprocessing-\$1.reset bang \;;
-#X obj 1187 644 line~;
-#X obj 1209 610 pack f 30;
-#X obj 1331 710 *~;
-#X obj 1432 781 line~;
-#X obj 1454 747 pack f 30;
-#X obj 1386 817 *~;
-#X obj 1215 497 r c-audioprocessing-wet-\$1;
-#X obj 1451 672 r c-audioprocessing-wet-\$1;
-#X obj 1351 845 +~;
-#X obj 1204 543 - 1;
-#X obj 1204 569 abs;
-#X obj 988 829 +~;
-#X obj 1024 776 *~;
-#X obj 947 762 *~;
-#X obj 305 290 bng 15 250 50 0 empty empty R 4 8 0 10 -262144 -1 -1
-;
-#X obj 242 365 s audioprocessing-\$1.wet.ramp;
-#X msg 242 334 1 0;
+dry/wet_(0:1) 0 8 0 8 -204800 -128992 -33289 0 1;
+#X msg 44 485 \; audioprocessing-\$1.reset bang \;;
+#X obj 1264 592 r c-audioprocessing-wet-\$1;
+#X obj 287 305 bng 15 250 50 0 empty empty wet 17 8 0 10 -262144 -1
+-1;
+#X obj 197 396 s audioprocessing-\$1.wet.ramp;
+#X obj 289 108 bng 15 250 50 0 audioprocessing-\$1.reset audioprocessing-\$1.reset
+reset 18 7 0 10 -261234 -1 -1;
+#X obj 959 764 equalpowercrossfade-2;
+#X obj 1191 754 equalpowercrossfade-2;
+#X obj 117 305 bng 15 250 50 0 empty empty dry 17 8 0 10 -262144 -1
+-1;
+#X msg 131 357 0 30;
+#X msg 244 358 1 30;
 #X connect 0 0 18 0;
 #X connect 1 0 52 0;
 #X connect 13 0 14 0;
-#X connect 14 0 64 0;
+#X connect 14 0 59 0;
 #X connect 15 0 38 1;
 #X connect 17 0 38 0;
-#X connect 17 0 78 0;
-#X connect 18 0 77 0;
-#X connect 18 1 70 0;
+#X connect 17 0 64 0;
+#X connect 18 0 64 1;
+#X connect 18 1 65 1;
 #X connect 19 0 18 0;
 #X connect 20 0 18 0;
 #X connect 22 0 18 0;
 #X connect 23 0 37 0;
-#X connect 23 0 67 0;
+#X connect 23 0 65 0;
 #X connect 24 0 53 0;
 #X connect 25 0 37 1;
 #X connect 30 0 25 0;
@@ -694,29 +682,14 @@ dry/wet_(0:1) 0 8 0 8 -204800 -128992 -33289 17900 1;
 #X connect 54 0 53 1;
 #X connect 55 0 52 2;
 #X connect 55 0 53 2;
-#X connect 58 0 36 0;
-#X connect 59 0 58 0;
-#X connect 60 0 58 0;
-#X connect 61 0 58 0;
-#X connect 62 0 58 0;
-#X connect 65 0 67 1;
-#X connect 65 0 78 1;
-#X connect 66 0 65 0;
-#X connect 67 0 73 0;
-#X connect 68 0 70 1;
-#X connect 68 0 77 1;
-#X connect 69 0 68 0;
-#X connect 70 0 73 1;
-#X connect 71 0 74 0;
-#X connect 72 0 69 0;
-#X connect 73 0 29 0;
-#X connect 73 0 27 0;
-#X connect 74 0 75 0;
-#X connect 75 0 66 0;
-#X connect 76 0 28 0;
-#X connect 76 0 26 0;
-#X connect 77 0 76 1;
-#X connect 78 0 76 0;
-#X connect 79 0 81 0;
-#X connect 81 0 80 0;
-#X coords 0 -1 1 1 240 220 1 100 100;
+#X connect 60 0 64 2;
+#X connect 60 0 65 2;
+#X connect 61 0 68 0;
+#X connect 64 0 28 0;
+#X connect 64 0 26 0;
+#X connect 65 0 27 0;
+#X connect 65 0 29 0;
+#X connect 66 0 67 0;
+#X connect 67 0 62 0;
+#X connect 68 0 62 0;
+#X coords 0 -1 1 1 240 230 1 100 100;

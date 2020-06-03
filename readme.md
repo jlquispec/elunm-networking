@@ -50,7 +50,7 @@ Para uso a través de LAN (red local) e Internet:
     - Abrir el patch cliente: **main_elunm-cliente.pd**.
     - Configurar la dirección de IP de destino (proporcionado por el usuario que opera el patch servidor) y el puerto por el cual se realizará la comunicación.
     - Configurar el usuario para identificar a través de quién se realizará la comunicación (user0, user1, user2,... y user9).
-    - Activar el envío de mensajes usando el **toggle Connect**, esperar para asegurar que la conexión se realizó satisfactoriamente. Ya se encuentra listo para la operación
+    - Activar el envío de mensajes usando el **toggle Connect**, esperar para asegurar que la conexión se realizó satisfactoriamente. Ya se encuentra listo para la operación.
 
 ## Glosario de mensajes
 

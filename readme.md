@@ -27,7 +27,7 @@ Se necesitarán las siguientes librerías externas, las cuales deberán ser inst
 
 Nota: Mapear la librería zexy en el startup de Pure Data.
 
-## Manual
+## Manual de configuración
 
 Para uso local (en la misma computadora):
 

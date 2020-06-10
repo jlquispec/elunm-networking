@@ -10,7 +10,7 @@ Descargar la última versión en [https://github.com/jlquispec/elunm-networking/
 
 ## Versión 1.0
 
-Nececita Pd **0.50-2** o superior.
+Necesita Pd **0.51** o superior.
 
 - Soporte para 10 usuarios conectados hacia el patch servidor con las denominaciones user0, user1, user2,... y user9.
 - Se permite la recepción de mensajes por usuario en un intervalo mínimo de 100ms para asegurar el correcto funcionamiento.
@@ -21,18 +21,19 @@ Nececita Pd **0.50-2** o superior.
 
 Se necesitarán las siguientes librerías externas, las cuales deberán ser instaladas en su última versión a través del complemento Deken integrado dentro de Pure Data.
 
-- else (objetos: fbdelay~, pitch.shift~, rm~, dir).
+- else (objetos: fbdelay~, pitch.shift~, rm~, dir, pic).
 - zexy (objetos: z~, limiter~).
 - freeverb (objeto: freeverb~).
 
-Mapear la librería zexy en el startup de Pure Data.
+Nota: Mapear la librería zexy en el startup de Pure Data.
 
 ## Manual
 
 Para uso local (en la misma computadora):
 
-- Se recomienda abrir dos instancias de Pure Data para la ejecución del patch servidor y patch cliente: **main_elunm-server.pd** y **main_elunm-cliente.pd**.
+- Abrir el patch servidor: **main_elunm-networking-server.pd** .
 - En el patch servidor configurar el puerto a través el cual se recepcionarán los mensajes (por ejemplo: 13000) y activar la escucha de mensajes usando el **toggle Listen**. Ya se encuentra listo la operación.
+- Abrir el patch cliente:  **main_elunm-networking-cliente.pd** en una instancia nueva a través del **toggle Load Client.**
 - En el patch cliente configurar la dirección de IP de destino en 127.0.0.1 (localhost) y el puerto a través del cual se realizará la comunicación (debe ser el mismo usado en el patch servidor).
 - Configurar el usuario para identificar a través de quién se realizará la comunicación (user0, user1, user2,... y user9).
 - Activar el envío de mensajes usando el **toggle Connect**, esperar 1 segundo aproximadamente para asegurar que la conexión se realizó satisfactoriamente. Ya se encuentra listo para la operación.
@@ -40,7 +41,7 @@ Para uso local (en la misma computadora):
 Para uso a través de LAN (red local) e Internet:
 
 - Servidor:
-    - Abrir el patch servidor: **main_elunm-server.pd**.
+    - Abrir el patch servidor: **main_elunm-networking-server.pd**.
     - Configurar el puerto a través el cual se recepcionarán los mensajes; por ejemplo: 13000.
     - Debe proporcionar a los usuarios cliente su dirección IP, en caso que la comunicación se realice a través de una red local (LAN) obtenerlo dentro de las configuraciones de red de la computadora que se usa (Para Windows usar el comando ***ipconfig***  a través del Símbolo del Sistema)
 
@@ -54,4 +55,4 @@ Para uso a través de LAN (red local) e Internet:
 
 ## Glosario de mensajes
 
-- Dentro del patch **main_elunm-cliente.pd** se tiene un set completo de los mensajes soportados a través de ejemplos para su uso y comprensión.
+- Dentro del patch **main_elunm-networking-cliente.pd** se tiene un set completo de los mensajes soportados a través de ejemplos para su uso y comprensión.

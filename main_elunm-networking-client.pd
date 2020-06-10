@@ -1,0 +1,250 @@
+#N canvas -8 -8 1858 1037 12;
+#X declare -path ./lib;
+#X obj 61 77 netoutput;
+#A saved 127 0 0 1 13000 user0;
+#N canvas 571 303 450 300 declare 0;
+#X obj 46 16 declare -path ./lib;
+#X restore 30 18 pd declare;
+#X text 303 261 <-- Click para abrir glosario de instrucciones soportadas
+en el patch servidor, f 46;
+#X obj 61 49 r messages-0;
+#N canvas -8 -8 1858 1037 reproduccion-procesamiento 0;
+#X text 345 324 Pausar reproducción;
+#X msg 231 457 sampleplayer-0.volume.ramp 1 1500;
+#X msg 261 537 sampleplayer-0.rate.ramp -1 4000;
+#X msg 285 571 sampleplayer-0.rate.ramp -4 2000;
+#X msg 298 607 sampleplayer-0.rate.ramp 1 3000;
+#X msg 147 326 sampleplayer-0.pause bang;
+#X msg 188 387 sampleplayer-0.stop bang;
+#X text 372 389 Detener reproducción (Retorna a la posición 0);
+#X msg 325 742 sampleplayer-0.reset bang;
+#X msg 1007 167 audioprocessing-0.pitchshifter.reset bang \;;
+#X text 985 70 PITCHSHIFTER, f 13;
+#X text 1024 205 RING MODULATOR;
+#X text 1103 572 REVERB;
+#X text 1054 334 DELAY;
+#X msg 1031 228 audioprocessing-0.ringmodulator.freq.ramp 200 2000
+;
+#X text 1405 208 Rampa lineal de frequencia de modulación a 200Hz
+en 2 seg., f 40;
+#X text 1389 864 Activar Freeze en Reverb, f 27;
+#X text 1405 895 Desactivar Freeze en Reverb, f 30;
+#X msg 203 425 sampleplayer-0.volume.ramp 0.5 4000;
+#X text 407 280 Inicia reproducción sin loop desde la POSICION 0.2
+(relativa) con RATE 1.4 y VOLUMEN 0.8, f 76;
+#X msg 119 287 sampleplayer-0.playoneshot 0.2 1.4 0.8;
+#X msg 240 496 sampleplayer-0.volume.rampfromto 0.1 0.9 1000 \;;
+#X msg 304 645 sampleplayer-0.rate.rampfromto 0.2 1 3000;
+#X text 489 454 Rampa lineal de volumen a 0.5 en 1.5 segundos, f 61
+;
+#X msg 323 688 sampleplayer-0.values.ramp 0.5 1 5000;
+#X text 1148 966 MODULO:;
+#X msg 996 134 audioprocessing-0.pitchshifter.transp.rampfromto -1
+12 2000;
+#X msg 981 98 audioprocessing-0.pitchshifter.transp.ramp 12 2000;
+#X text 1357 544 Resetea los valores del delay;
+#X text 1328 168 Reseta los valores del pitchshifter;
+#X text 1398 296 Resetea los valores del ringmodulator;
+#X text 1409 932 Resetea los valores del reverb;
+#X msg 1040 261 audioprocessing-0.ringmodulator.freq.rampfromto 50
+1000 2000;
+#X text 990 29 MENSAJES DE PROCESAMIENTO DE AUDIO EN CANAL/INSTANCIA
+0;
+#X text 17 166 MENSAJES REPRODUCCION DE SAMPLE EN CANAL/INSTANCIA 0
+;
+#X msg 1055 359 audioprocessing-0.delay.values.ramp 200 7000 1000;
+#X obj 91 784 s messages-0;
+#X obj 953 1158 s messages-0;
+#X msg 41 43 sampleselector-0.openfolder 0 samples3;
+#X text 10 12 MENSAJES DE SELECCION Y CARGA DE SAMPLES EN CANAL/INSTANCIA
+0, f 62;
+#X obj 40 137 s messages-0;
+#X msg 63 74 sampleselector-0.selectfile 0 2 0;
+#X msg 84 101 sampleselector-0.selectfile 0 2 1;
+#X text 329 101 Selecciona \, carga y reproduce el sample de la carpeta
+0 y archivo de índice 2, f 81;
+#X text 313 74 Selecciona y carga el sample de la carpeta 0 y archivo
+de índice 2, f 67;
+#X text 327 48 Abre la carpeta samples3 en la carpeta de índice 0
+;
+#X msg 34 205 sampleplayer-0.play 0.3 0;
+#X text 222 208 Inicia reproducción en la POSICIÓN 0.3 (relativa)
+sin loop., f 63;
+#X text 1368 1072 Resetea los valores de todo el modulo de procesamiento
+;
+#X msg 1067 396 audioprocessing-0.delay.time.ramp 400 2000;
+#X text 1381 395 Rampa lineal del delaytime a 400ms en 2 seg.;
+#X msg 1078 428 audioprocessing-0.delay.time.rampfromto 200 500 2000
+;
+#X msg 1085 463 audioprocessing-0.delay.feedbacktime.ramp 3000 500
+;
+#X msg 1100 604 audioprocessing-0.reverb.values.ramp 0.7 0.5 0.1 4000
+;
+#X msg 1096 544 audioprocessing-0.delay.reset bang;
+#X msg 1047 297 audioprocessing-0.ringmodulator.reset bang;
+#X msg 1142 864 audioprocessing-0.reverb.freeze 1;
+#X msg 1147 895 audioprocessing-0.reverb.freeze 0;
+#X msg 1146 931 audioprocessing-0.reverb.reset bang;
+#X msg 1149 1072 audioprocessing-0.reset bang;
+#X msg 1142 999 audioprocessing-0.wet.ramp 0.5 2000;
+#X text 1438 642 Rampa lineal de wet a 0.5 en 2 seg., f 37;
+#X msg 1118 681 audioprocessing-\$1.reverb.wet.rampfromto 1 0.5 2000
+;
+#X msg 1109 644 audioprocessing-\$1.reverb.wet.ramp 0.5 2000;
+#X msg 1123 716 audioprocessing-\$1.reverb.damping.ramp 0.2 1000;
+#X msg 1132 749 audioprocessing-\$1.reverb.damping.rampfromto 0.1 0.2
+2000;
+#X text 1549 743 Rampa lineal de damping de 0.1 a 0.2 en 2seg., f
+25;
+#X text 1467 715 Rampa lineal de damping a 0.2 en 1seg., f 45;
+#X text 1496 679 Rampa lineal de wet de 1 a 0.5 en 2seg., f 41;
+#X text 1495 594 Rampa lineal de reverb (wet: 0.7 \, roomsize: 0.5
+\, damping: 0.1) en 4seg., f 39;
+#X text 1450 463 Rampa lineal del delayfeedback a 3000ms en 0.5seg.
+;
+#X text 1456 426 Rampa lineal del delaytime de 200 a 500ms en 2seg.
+;
+#X text 1474 253 Rampa lineal de frequencia de modulación de 50Hz
+a 1000Hz en 2seg., f 40;
+#X text 1423 350 Rampa lineal de delay (delaytime: 200ms \, feedback
+time: 7000ms) en 1seg., f 41;
+#X text 1354 91 Rampa lineal de transposición a 12 semitonos de transposiciön
+en 2seg., f 48;
+#X text 1427 127 Rampa lineal de transposición de -1 a 12 semitonos
+de transposiciön en 3seg.;
+#X text 542 570 Rampa lineal de RATE a 2 (2x) en 2seg.;
+#X text 527 540 Rampa lineal de RATE a -1 (reverse) en 4seg.;
+#X text 586 499 Rampa lineal de volumen de 0.1 a 0.9 en 1seg., f 51
+;
+#X text 559 606 Rampa lineal de RATE a 1 (normal) en 3seg.;
+#X text 613 641 Rampa lineal de RATE de 0.2 a 1 en 3seg.;
+#X text 602 686 Rampa lineal de RATE y VOLUMEN a 0.5 y 1 respectivamente
+en 5seg., f 41;
+#X text 468 425 Rampa lineal de volumen a 0.5 en 4seg. (4000 milisegundos)
+, f 64;
+#X msg 1135 784 audioprocessing-\$1.reverb.roomsize.ramp 0.7 3000;
+#X msg 1135 818 audioprocessing-\$1.reverb.roomsize.rampfromto 0.2
+0.6 2000;
+#X text 1491 784 Rampa lineal de roomsize a 0.7 en 3seg., f 41;
+#X text 1559 811 Rampa lineal de roomsize de 0.2 a 0.6 en 2seg., f
+28;
+#X text 1408 1000 Rampa lineal de wet del modulo a 0.5 en 2seg.;
+#X text 1452 1028 Rampa lineal de wet del modulo de 0 a 1 en 2seg.
+;
+#X msg 80 247 sampleplayer-0.play 0 1;
+#X text 270 245 Inicia reproducción desde la POSICION 0 (relativa)
+con loop, f 76;
+#X text 520 740 Resetea los valores del modulo: VOLUMEN \, RATE y POSICION
+de reproduccion y LOOP.;
+#X msg 165 355 sampleplayer-0.play bang;
+#X text 361 356 Retomar la reproducción;
+#X text 369 905 Paneo lineal a la derecha en 5seg.;
+#X text 454 979 Paneo lineal de izquierda a derecha en 4seg.;
+#X obj 57 1154 s messages-0;
+#X msg 104 868 spatializer-0.panning.ramp -1 3000;
+#X msg 113 906 spatializer-0.panning.ramp 1 5000;
+#X msg 126 940 spatializer-0.panning.ramp 0 1000;
+#X msg 144 978 spatializer-0.panning.rampfromto -1 1 4000;
+#X msg 1148 1032 audioprocessing-0.wet.rampfromto 0 1 2000;
+#X text 28 839 MENSAJES DE ESPACIALIZADOR STEREO EN CANAL/INSTANCIA
+0;
+#X text 362 870 Paneo lineal a la izquierda en 3seg.;
+#X msg 165 1017 spatializer-0.width.ramp 1 5000;
+#X msg 175 1042 spatializer-0.width.ramp 0 5000;
+#X msg 182 1077 spatializer-0.width.rampfromto 0 1 5000;
+#X text 405 1017 Cambio del ancho de la imagen stereo a abierta en
+5 seg.;
+#X text 411 1042 Cambio del ancho de la imagen stereo a cerrada (mono)
+en 5 seg., f 65;
+#X text 476 1072 Cambio del ancho de la imagen stereo de cerrada a
+abierta en 3 seg.;
+#X text 375 938 Paneo lineal al centro en 1seg.;
+#X msg 193 1115 spatializer-0.values.ramp 0.5 1 2000;
+#X text 479 1119 Cambio de panning a 0.5 y ancho a 1 en 2 seg.;
+#X msg 215 1151 spatializer-0.reset bang;
+#X text 412 1151 Resetea del espacializador stereo;
+#X msg 1089 500 audioprocessing-0.delay.feedbacktime.rampfromto 1000
+3000 2000, f 62;
+#X text 1543 495 Rampa lineal del delayfeedback de 1000 a 3000ms en
+2seg., f 30;
+#X connect 1 0 36 0;
+#X connect 2 0 36 0;
+#X connect 3 0 36 0;
+#X connect 4 0 36 0;
+#X connect 5 0 36 0;
+#X connect 6 0 36 0;
+#X connect 8 0 36 0;
+#X connect 9 0 37 0;
+#X connect 14 0 37 0;
+#X connect 18 0 36 0;
+#X connect 20 0 36 0;
+#X connect 21 0 36 0;
+#X connect 22 0 36 0;
+#X connect 24 0 36 0;
+#X connect 26 0 37 0;
+#X connect 27 0 37 0;
+#X connect 32 0 37 0;
+#X connect 35 0 37 0;
+#X connect 38 0 40 0;
+#X connect 41 0 40 0;
+#X connect 42 0 40 0;
+#X connect 46 0 36 0;
+#X connect 49 0 37 0;
+#X connect 51 0 37 0;
+#X connect 52 0 37 0;
+#X connect 53 0 37 0;
+#X connect 54 0 37 0;
+#X connect 55 0 37 0;
+#X connect 56 0 37 0;
+#X connect 57 0 37 0;
+#X connect 58 0 37 0;
+#X connect 59 0 37 0;
+#X connect 60 0 37 0;
+#X connect 62 0 37 0;
+#X connect 63 0 37 0;
+#X connect 64 0 37 0;
+#X connect 65 0 37 0;
+#X connect 83 0 37 0;
+#X connect 84 0 37 0;
+#X connect 89 0 36 0;
+#X connect 92 0 36 0;
+#X connect 97 0 96 0;
+#X connect 98 0 96 0;
+#X connect 99 0 96 0;
+#X connect 100 0 96 0;
+#X connect 101 0 37 0;
+#X connect 104 0 96 0;
+#X connect 105 0 96 0;
+#X connect 106 0 96 0;
+#X connect 111 0 96 0;
+#X connect 113 0 96 0;
+#X connect 115 0 37 0;
+#X restore 74 250 pd reproduccion-procesamiento;
+#N canvas 387 530 1858 1037 adicionales 0;
+#X msg 96 145 mainoutput.recording.stop bang;
+#X text 334 147 detiene grabacion de salida principal;
+#X text 328 328 Resetea todos los módulos del patch servidor!;
+#X text 324 296 Resetea los módulo con instancia 0 del patch servidor
+;
+#X text 442 50 Inicia grabacion de salida principal sin sobreescritura
+en archivosalida_0.wav \, archivosalida_1.wav \, etc.;
+#X text 442 99 Inicia grabacion de salida principal con sobreescritura
+en archivosalida.wav en;
+#X msg 91 62 mainoutput.recording.start 0 archivosalida;
+#X msg 94 102 mainoutput.recording.start 1 archivosalida;
+#X msg 118 301 main.instance-0.reset bang;
+#X msg 199 332 main.reset bang;
+#X text 60 264 MENSAJES DE CONTROL EN SERVIDOR;
+#X text 86 26 MENSAJES DE GRABACION DE ARCHIVO DE SALIDA;
+#X obj 34 199 s messages-0;
+#X obj 87 373 s messages-0;
+#X connect 0 0 12 0;
+#X connect 6 0 12 0;
+#X connect 7 0 12 0;
+#X connect 8 0 13 0;
+#X connect 9 0 13 0;
+#X restore 74 285 pd adicionales;
+#X obj 74 369 elunm_gui.abs;
+#X text 188 361 <-- Click para abrir una interfaz visual para el envío
+de mensajes, f 39;
+#X connect 3 0 0 0;

@@ -1,0 +1,61 @@
+#N canvas -8 -8 1858 1037 12;
+#X obj 364 41 inlet;
+#X obj 46 48 inlet~;
+#X obj 93 359 *~;
+#X obj 404 459 outlet~;
+#X obj 79 464 outlet~;
+#X obj 228 61 inlet~;
+#X obj 119 302 cos~;
+#X obj 338 155 line~;
+#X obj 82 393 +~;
+#X obj 188 357 *~;
+#X obj 471 335 *~;
+#X obj 239 320 cos~;
+#X obj 324 376 *~;
+#X obj 364 65 * -1;
+#X obj 364 89 / 8;
+#X obj 253 251 -~ 0.25;
+#X obj 253 275 abs~;
+#X obj 514 289 cos~;
+#X obj 349 313 cos~;
+#X obj 347 260 -~ 0.25;
+#X obj 347 284 abs~;
+#X obj 350 338 *~ -1;
+#X obj 423 405 +~;
+#X obj 364 113 pack f 50;
+#X text 514 44 Jorge Quispe (2020) https://github.com/jlquispec;
+#X text 481 105 TRUE PANNING (Transformación de la imagen stéreo)
+Se implementó la ecuación de rotación-panorámico stereo (Música
+y Espacio de Pablo DiLiscia) la cual es una derivación de la técnica
+de la ley del panorámico seno-coseno (un tipo de intensity panning).
+Para señales mono duplicadas la amplitud e intensidad resultante es
+el doble que la ecuación de energía constante.;
+#X text 37 16 inlet~(1): L \, inlet~(2): R \, inlet: position (-1 \,
+1);
+#X connect 0 0 13 0;
+#X connect 1 0 2 0;
+#X connect 1 0 12 0;
+#X connect 2 0 8 0;
+#X connect 5 0 9 0;
+#X connect 5 0 10 0;
+#X connect 6 0 2 1;
+#X connect 7 0 6 0;
+#X connect 7 0 15 0;
+#X connect 7 0 19 0;
+#X connect 7 0 17 0;
+#X connect 8 0 4 0;
+#X connect 9 0 8 1;
+#X connect 10 0 22 1;
+#X connect 11 0 9 1;
+#X connect 12 0 22 0;
+#X connect 13 0 14 0;
+#X connect 14 0 23 0;
+#X connect 15 0 16 0;
+#X connect 16 0 11 0;
+#X connect 17 0 10 1;
+#X connect 18 0 21 0;
+#X connect 19 0 20 0;
+#X connect 20 0 18 0;
+#X connect 21 0 12 1;
+#X connect 22 0 3 0;
+#X connect 23 0 7 0;

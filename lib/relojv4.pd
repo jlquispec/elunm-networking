@@ -1,0 +1,105 @@
+#N canvas 576 342 636 417 12;
+#N canvas 0 23 925 632 clock 0;
+#X obj 746 155 f;
+#X obj 746 179 + 1;
+#X floatatom 745 227 5 0 0 0 - - -;
+#X obj 746 103 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 746 298 f;
+#X obj 746 322 + 1;
+#X floatatom 746 369 5 0 0 0 - - -;
+#X obj 691 139 - 1;
+#X msg 535 154 0;
+#X obj 746 130 metro 10;
+#X obj 746 203 % 100;
+#X obj 746 250 sel 99;
+#X obj 746 274 del 10;
+#X obj 746 346 % 60;
+#X obj 746 393 sel 59;
+#X obj 746 417 del 1000;
+#X obj 746 441 f;
+#X obj 746 465 + 1;
+#X obj 692 422 - 1;
+#X obj 746 489 % 60;
+#X floatatom 746 513 5 0 0 0 - - -;
+#X obj 89 460 cnv 15 100 60 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 106 159 bng 30 250 50 0 empty clock_start Start 0 -10 0 12 -4034
+-1 -1;
+#X obj 145 158 bng 30 250 50 0 empty clock_pause Pause 0 -10 0 12 -261234
+-1 -1;
+#X obj 185 158 bng 30 250 50 0 empty clock_reset Reset 0 -10 0 12 -260097
+-1 -1;
+#X obj 224 158 bng 30 250 50 0 empty clock_stop Stop 0 -10 0 12 -258113
+-1 -1;
+#X msg 746 47 1;
+#X msg 746 76 0;
+#X obj 436 59 t b b;
+#X obj 492 100 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 106 216 nbx 2 25 -1e+37 1e+37 0 0 empty empty Min: 0 -8 0 20
+-262144 -1 -1 0 256;
+#X obj 156 216 nbx 3 25 -1e+37 1e+37 0 0 empty empty Seg: 0 -8 0 20
+-262144 -1 -1 0 256;
+#X obj 208 216 nbx 2 25 -1e+37 1e+37 0 0 empty empty Ms 0 -8 0 20 -262144
+-1 -1 0 256;
+#X obj 489 21 loadbang;
+#X obj 489 45 del 1000;
+#X obj 698 273 - 1;
+#X obj 503 292 f;
+#X obj 496 364 f;
+#X msg 520 123 0;
+#X obj 103 103 cnv 15 155 38 empty empty empty 50 12 0 14 -204800 -66577
+0;
+#X floatatom 233 117 3 0 58 2 seg - -;
+#X floatatom 205 117 3 0 0 2 min - -;
+#X text 102 116 RELOJ-inicio->;
+#X connect 0 0 1 0;
+#X connect 1 0 0 1;
+#X connect 1 0 10 0;
+#X connect 2 0 11 0;
+#X connect 2 0 32 0;
+#X connect 3 0 9 0;
+#X connect 4 0 5 0;
+#X connect 5 0 4 1;
+#X connect 5 0 13 0;
+#X connect 6 0 14 0;
+#X connect 6 0 31 0;
+#X connect 7 0 0 0;
+#X connect 8 0 7 0;
+#X connect 8 0 41 0;
+#X connect 8 0 40 0;
+#X connect 9 0 0 0;
+#X connect 10 0 2 0;
+#X connect 11 0 12 0;
+#X connect 12 0 4 0;
+#X connect 13 0 6 0;
+#X connect 14 0 15 0;
+#X connect 15 0 16 0;
+#X connect 16 0 17 0;
+#X connect 17 0 16 1;
+#X connect 17 0 19 0;
+#X connect 18 0 16 0;
+#X connect 19 0 20 0;
+#X connect 20 0 30 0;
+#X connect 22 0 26 0;
+#X connect 23 0 27 0;
+#X connect 24 0 8 0;
+#X connect 25 0 28 0;
+#X connect 26 0 3 0;
+#X connect 27 0 3 0;
+#X connect 28 0 29 0;
+#X connect 28 1 27 0;
+#X connect 29 0 36 0;
+#X connect 29 0 37 0;
+#X connect 29 0 38 0;
+#X connect 33 0 34 0;
+#X connect 34 0 29 0;
+#X connect 35 0 4 0;
+#X connect 36 0 35 0;
+#X connect 37 0 18 0;
+#X connect 38 0 7 0;
+#X connect 40 0 36 0;
+#X connect 41 0 37 0;
+#X coords 0 -1 1 1 160 143 2 100 100;
+#X restore 82 49 pd clock;

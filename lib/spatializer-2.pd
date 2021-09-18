@@ -1,6 +1,6 @@
 #N canvas -8 -8 1858 1037 12;
 #X obj 238 130 hsl 165 15 -1 1 0 0 c-spatializer-panning-\$1 c-spatializer-panning-\$1
-panning(-1:1) 0 8 0 9 -159484 -128992 -33289 8200 1;
+panning(-1:1) 0 8 0 9 -159484 -128992 -33289 0 1;
 #X obj 313 145 bng 15 250 50 0 empty empty c 5 7 0 8 -262144 -1 -1
 ;
 #X msg 100 213 0;
@@ -25,7 +25,7 @@ ramp_time_(0:5000)_msec 0 8 0 9 -228856 -128992 -33289 32 1;
 #X obj 78 279 v \$0-spatializer-ramptime;
 #X obj 12 10 loadbang;
 #X obj 12 36 \$0 \$1;
-#N canvas -8 -8 1858 1037 methods 1;
+#N canvas -8 -8 1858 1037 methods 0;
 #X obj 85 269 pack f f f, f 11;
 #X msg 85 301 \$3 \, \$1 \$2;
 #X obj 85 150 unpack f f;
@@ -193,7 +193,7 @@ reset 18 7 0 10 -261234 -1 -1;
 bang \;;
 #X obj 238 164 hsl 165 15 -1 1 0 0 c-spatializer-width-\$1 c-spatializer-width-\$1
 witdh(-1:1) 0 8 0 9 -204786 -128992 -33289 8200 1;
-#X floatatom 408 164 5 -1 1 0 - c-spatializer-panning-#1 -;
+#X floatatom 408 164 5 -1 1 0 - c-spatializer-width-#1 -;
 #X obj 745 377 intensitypanning-stereo-2;
 #X obj 755 267 width-stereo-2;
 #X obj 869 139 r c-spatializer-width-\$1;

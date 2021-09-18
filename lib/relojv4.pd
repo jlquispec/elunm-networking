@@ -37,12 +37,12 @@
 #X obj 436 59 t b b;
 #X obj 492 100 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 106 216 nbx 2 25 -1e+37 1e+37 0 0 empty empty Min: 0 -8 0 20
+#X obj 106 216 nbx 2 25 -1e+037 1e+037 0 0 empty empty Min: 0 -8 0
+20 -262144 -1 -1 0 256;
+#X obj 156 216 nbx 3 25 -1e+037 1e+037 0 0 empty empty Seg: 0 -8 0
+20 -262144 -1 -1 0 256;
+#X obj 208 216 nbx 2 25 -1e+037 1e+037 0 0 empty empty Ms 0 -8 0 20
 -262144 -1 -1 0 256;
-#X obj 156 216 nbx 3 25 -1e+37 1e+37 0 0 empty empty Seg: 0 -8 0 20
--262144 -1 -1 0 256;
-#X obj 208 216 nbx 2 25 -1e+37 1e+37 0 0 empty empty Ms 0 -8 0 20 -262144
--1 -1 0 256;
 #X obj 489 21 loadbang;
 #X obj 489 45 del 1000;
 #X obj 698 273 - 1;
@@ -103,3 +103,4 @@
 #X connect 41 0 37 0;
 #X coords 0 -1 1 1 160 143 2 100 100;
 #X restore 82 49 pd clock;
+#X coords 0 -1 1 1 185 170 2 70 35;

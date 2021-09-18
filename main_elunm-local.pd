@@ -1,9 +1,9 @@
-#N struct 1092-g2 float x float y array tab 1092-g2b;
-#N struct 1092-g2b float y;
-#N struct 1093-g2 float x float y array tab 1093-g2b;
-#N struct 1093-g2b float y;
-#N struct 1094-g2 float x float y array tab 1094-g2b;
-#N struct 1094-g2b float y;
+#N struct 1227-g2 float x float y array tab 1227-g2b;
+#N struct 1227-g2b float y;
+#N struct 1228-g2 float x float y array tab 1228-g2b;
+#N struct 1228-g2b float y;
+#N struct 1229-g2 float x float y array tab 1229-g2b;
+#N struct 1229-g2b float y;
 #N canvas -8 -8 1920 1037 12;
 #X declare -path ./lib;
 #X obj 13 9 sampleselector 0;
